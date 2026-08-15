@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "JobScraperBot.App": {
+      "commandName": "Project",
+      "environmentVariables": {
+        
+      }
+    }
+  }
+}

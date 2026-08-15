@@ -1,0 +1,50 @@
+{
+  "seniorityExcludeTerms": ["senior", "ssr", "semi senior", "semi-senior", "sr.", "lead"],
+  "location": {
+    "acceptedOnsiteCities": [
+      "santa fe capital",
+      "santa fe, santa fe",
+      "ciudad de santa fe"
+    ],
+    "knownOtherCities": [
+      "rosario", "reconquista", "rafaela", "córdoba", "cordoba", "mendoza",
+      "amba", "caba", "c.a.b.a", "c.a.b.a.",
+      "ciudad autónoma de buenos aires", "ciudad autonoma de buenos aires",
+      "buenos aires", "gba", "gran buenos aires"
+    ]
+  },
+  "roleProfiles": [
+    {
+      "name": "Backend",
+      "requiredKeywordGroups": [["backend", "back-end", "server-side"]]
+    },
+    {
+      "name": "Full-stack",
+      "requiredKeywordGroups": [["full stack", "fullstack", "full-stack"]]
+    },
+    {
+      "name": "Data Analyst",
+      "requiredKeywordGroups": [["data analyst", "analista de datos"]]
+    },
+    {
+      "name": "Data Engineer",
+      "requiredKeywordGroups": [["data engineer", "ingeniero de datos"]]
+    },
+    {
+      "name": "Desarrollador (Python/Java/C#/C++)",
+      "requiredKeywordGroups": [
+        ["developer", "desarrollador", "programador", "engineer", "ingeniero"],
+        ["python", "java", "c#", ".net", "c++"]
+      ]
+    },
+    {
+      "name": "Pasantía / Trainee general",
+      "requiredSeniorityTerms": ["pasantía", "pasantia", "trainee", "intern", "internship"],
+      "requiredKeywordGroups": [],
+      "excludeKeywords": [
+        "soporte técnico", "soporte tecnico", "mesa de ayuda",
+        "help desk", "service desk", "atención al cliente", "call center"
+      ]
+    }
+  ]
+}

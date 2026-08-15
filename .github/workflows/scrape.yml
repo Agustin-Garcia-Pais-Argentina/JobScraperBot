@@ -1,0 +1,41 @@
+name: Scrape Job Offers
+
+on:
+  schedule:
+    - cron: "0 13 * * *"  # 10:00 ART (UTC-3) -> 13:00 UTC
+    - cron: "0 21 * * *"  # 18:00 ART (UTC-3) -> 21:00 UTC
+  workflow_dispatch: {}   # permite correrlo manualmente para testear
+
+permissions:
+  contents: write   # necesario para commitear el estado (data/seen-offers.json)
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Restore
+        run: dotnet restore JobScraperBot.sln
+
+      - name: Build
+        run: dotnet build JobScraperBot.sln --configuration Release --no-restore
+
+      - name: Run tests
+        run: dotnet test JobScraperBot.sln --configuration Release --no-build
+
+      - name: Run bot
+        run: dotnet run --project src/JobScraperBot.App --configuration Release --no-build
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+      - name: Persistir estado (ofertas vistas)
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update seen offers [skip ci]"
+          file_pattern: "data/*.json"
