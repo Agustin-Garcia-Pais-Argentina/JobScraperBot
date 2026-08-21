@@ -4,13 +4,12 @@
     "acceptedOnsiteCities": [
       "santa fe capital",
       "santa fe, santa fe",
-      "ciudad de santa fe"
+      "ciudad de santa fe",
+      "santa fe, argentina",
+      "Argentina"
     ],
     "knownOtherCities": [
-      "rosario", "reconquista", "rafaela", "córdoba", "cordoba", "mendoza",
-      "amba", "caba", "c.a.b.a", "c.a.b.a.",
-      "ciudad autónoma de buenos aires", "ciudad autonoma de buenos aires",
-      "buenos aires", "gba", "gran buenos aires"
+      
     ]
   },
   "roleProfiles": [
