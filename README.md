@@ -25,9 +25,9 @@ El proyecto está diseñado siguiendo principios **SOLID** y una arquitectura en
 ## ✨ Características Principales
 
 * [x] **Scraping Híbrido:** Capaz de consumir contratos JSON:API o interceptar nodos HTML según la naturaleza de la bolsa de trabajo.
-* [x] **Filtros de Precisión Quirúrgica:** Discrimina ofertas analizando contextos. (Ej: Descarta un rol si el título dice "Senior", pero lo acepta si la descripción dice "trabajarás con un Senior").
+* [x] **Filtros Precisios:** Filtra ofertas analizando contextos y no solo palabras clave en su publicacion. (Ej: Descarta un rol si el título dice "Senior", pero lo acepta si la descripción dice "trabajarás con un Senior").
 * [x] **Prevención de Spam (Flood Control):** El notificador agrupa las ofertas por origen y aplica delays estratégicos (`Task.Delay`) para no saturar la API de Telegram.
-* [x] **Memoria de Estado:** Sistema de deduplicación que asegura que una misma oferta jamás se notifique dos veces.
+* [x] **Memoria:** Sistema de deduplicación que asegura que una misma oferta jamás se notifique dos veces.
 * [x] **Camuflaje HTTP:** Inyección dinámica de cabeceras (*User-Agent*) para evitar bloqueos por parte de firewalls antibot.
 
 ## ⚙️ Configuración (`profile.json`)
