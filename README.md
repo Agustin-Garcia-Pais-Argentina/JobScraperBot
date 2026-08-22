@@ -1,57 +1,29 @@
-# JobScraperBot
+JobScraperBot 🚀
+Un bot automatizado construido en .NET diseñado para buscar, filtrar y notificar ofertas de trabajo personalizadas desde múltiples plataformas directamente a Telegram. Desarrollado por Agustín García, este proyecto implementa una arquitectura limpia y modular para procesar datos de APIs y extraer HTML de forma resiliente.
 
-Bot que scrapea ofertas de empleo de múltiples sitios, las filtra según un
-perfil configurable, y envía un resumen por Telegram dos veces al día.
-Corre 100% gratis en GitHub Actions.
+Arquitectura y Características
+Extracción Multi-fuente: Integración nativa con endpoints JSON (RemoteOK, GetOnBoard, Remotive) y parseo del árbol DOM utilizando HtmlAgilityPack (WeRemoto).
 
-Documentación de diseño completa:
-- `arquitectura-bot-scraper-empleos.md` — arquitectura, patrón plug-in, stack.
-- `setup-informacion-sistema.md` — detalle del `UserProfile` (perfil de búsqueda).
+Filtros Inteligentes: Pipeline de evaluación basado en expresiones regulares (\b) para descartar roles por seniority en el título y realizar match exacto del stack tecnológico.
 
-## Estructura
+Notificaciones Agrupadas: Sistema de alertas asíncronas hacia Telegram, dividiendo mensajes por portal y aplicando demoras estratégicas para respetar el Flood Control de la API.
 
-```
-src/JobScraperBot.Core/            Modelos y contratos (sin dependencias externas)
-src/JobScraperBot.Scrapers/        Un scraper "plugin" por sitio (implementa IJobScraper)
-src/JobScraperBot.Filters/         Pipeline de filtrado (implementa IJobFilter)
-src/JobScraperBot.Infrastructure/  Persistencia JSON, notificador de Telegram, resiliencia (Polly)
-src/JobScraperBot.Orchestration/   Coordina el ciclo completo
-src/JobScraperBot.App/             Entry point (consola) + profile.json
-tests/                             Tests contra fixtures (no contra los sitios en vivo)
-data/seen-offers.json              Estado persistente (lo commitea el propio workflow)
-.github/workflows/scrape.yml       Scheduler (10hs/18hs) + hosting
-```
+Tolerancia a Fallos: Implementación de políticas de resiliencia con Polly para manejar caídas de red, timeouts y errores HTTP (404/429) de forma elegante.
 
-## Setup local
+Deduplicación de Datos: Registro local en JSON (seen-offers.json) que garantiza que una misma oferta nunca se envíe dos veces al canal.
 
-```bash
-dotnet restore JobScraperBot.sln
-dotnet build JobScraperBot.sln
-dotnet test JobScraperBot.sln
+Configuración del Perfil
+El motor de búsqueda es agnóstico y 100% personalizable. Se controla mediante el archivo profile.json, donde se definen las preferencias exactas de búsqueda. Permite especificar ubicaciones objetivo (ej. Santa Fe, Remoto), lenguajes requeridos (C#, Vue, Python) y excluir palabras clave no deseadas para mantener la bandeja de entrada libre de spam.
 
-export TELEGRAM_BOT_TOKEN="..."
-export TELEGRAM_CHAT_ID="..."
-dotnet run --project src/JobScraperBot.App
-```
+Instalación y Uso
+Para ejecutar el scraper localmente, asegúrate de tener el SDK de .NET instalado.
 
-## Setup de Telegram
+Clona este repositorio en tu entorno local.
 
-1. Hablar con [@BotFather](https://t.me/BotFather) en Telegram, crear un bot con `/newbot` -> te da un `BOT_TOKEN`.
-2. Mandarle un mensaje al bot recién creado (para "abrir" la conversación).
-3. Consultar `https://api.telegram.org/bot<TOKEN>/getUpdates` para obtener tu `chat_id`.
-4. Cargar `TELEGRAM_BOT_TOKEN` y `TELEGRAM_CHAT_ID` como **GitHub Secrets** del repo
-   (Settings -> Secrets and variables -> Actions).
+Configura las credenciales de tu bot estableciendo las variables de entorno TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID.
 
-## Agregar un sitio nuevo
+Ejecuta el comando dotnet run --project src/JobScraperBot.App desde la raíz para iniciar el ciclo de extracción.
 
-1. Copiar `src/JobScraperBot.Scrapers/ExampleHtmlScraper.cs` (o `RemotiveScraper.cs`
-   si el sitio expone una API JSON), renombrar, ajustar `SiteName` y los selectores
-   en `HtmlOfferMapper` (o la lógica de parseo propia).
-2. Registrar el scraper en `src/JobScraperBot.App/Program.cs`:
-   `services.AddSingleton<IJobScraper, TuScraperNuevo>();`
-3. Nada más cambia: el Core, el pipeline de filtros, el notificador y el
-   orquestador no se tocan.
+El proyecto también incluye un flujo de integración continua mediante GitHub Actions (scrape.yml) preparado para ejecutarse de manera periódica y autónoma en la nube.
 
-## Correrlo manualmente en GitHub Actions
-
-Actions -> "Scrape Job Offers" -> "Run workflow" (usa el trigger `workflow_dispatch`).
+Con esto, cualquiera que entre a tu repositorio va a entender al instante qué problema resuelve tu bot, cómo está construido por detrás y cómo levantarlo en su propia máquina.
