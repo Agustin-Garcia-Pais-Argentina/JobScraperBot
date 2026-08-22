@@ -30,8 +30,17 @@ services.AddSingleton<IJobScraper, UtnBusquedasLaboralesScraper>();
 services.AddHttpClient<UtnPasantiasScraper>();
 services.AddSingleton<IJobScraper, UtnPasantiasScraper>();
 
-// services.AddHttpClient<ExampleHtmlScraper>();
-// services.AddSingleton<IJobScraper, ExampleHtmlScraper>(); // TODO: descomentar al configurar un sitio real
+services.AddHttpClient<IJobScraper, RemoteOkScraper>();
+services.AddSingleton<IJobScraper, RemoteOkScraper>();
+
+services.AddHttpClient<IJobScraper, WeRemotoScraper>();
+services.AddSingleton<IJobScraper, WeRemotoScraper>();
+
+services.AddHttpClient<IJobScraper, GetOnBoardScraper>();
+services.AddSingleton<IJobScraper, GetOnBoardScraper>();
+
+//services.AddHttpClient<ExampleHtmlScraper>();
+//services.AddSingleton<IJobScraper, ExampleHtmlScraper>(); // TODO: descomentar al configurar un sitio real
 // Próximos: GetOnBoardScraper (API), WeWorkRemotelyScraper (RSS)
 
 // --- Filtros del pipeline ---

@@ -29,27 +29,52 @@ public class TelegramNotifier : INotifier
     }
 
     public async Task SendSummaryAsync(IReadOnlyList<JobOffer> newOffers, CancellationToken ct)
+{
+    if (!newOffers.Any())
     {
-        if (newOffers.Count == 0)
+        _logger.LogInformation("Sin ofertas nuevas, no se envía mensaje.");
+        return;
+    }
+
+    // 1. Agrupamos todas las ofertas según la página de origen
+    var groupedOffers = newOffers.GroupBy(o => o.SourceSite);
+
+    // 2. Iteramos sobre cada grupo (cada página)
+    foreach (var group in groupedOffers)
+    {
+        var siteName = group.Key;
+        var siteOffers = group.ToList();
+
+        // 3. Armamos el título exclusivo para este mensaje
+        var message = $"🔎 {siteOffers.Count} nuevas ofertas en — {siteName} —\n\n";
+
+        foreach (var offer in siteOffers)
         {
-            _logger.LogInformation("Sin ofertas nuevas, no se envía mensaje");
-            return;
+            message += $"• {offer.Title} — {offer.Company}\n  {offer.Url}\n";
         }
 
-        var pdfOffers = newOffers.Where(o => IsPdfUrl(o.Url)).ToList();
-        var textOffers = newOffers.Except(pdfOffers).ToList();
-
-        if (textOffers.Count > 0)
+        try
         {
-            foreach (var chunk in Chunk(BuildMessage(textOffers), 4000))
-                await _bot.SendMessage(_chatId, chunk, cancellationToken: ct);
+            // 4. Enviamos el mensaje individual para esta página
+            await _bot.SendMessage(
+                chatId: _chatId,
+                text: message,
+                linkPreviewOptions: new LinkPreviewOptions
+                {
+                    IsDisabled = true
+                },
+                cancellationToken: ct
+            );
+            
+            // Le damos un respiro de medio segundo a la API de Telegram para que no nos bloquee por flood
+            await Task.Delay(500, ct); 
         }
-
-        foreach (var offer in pdfOffers)
+        catch (Exception ex)
         {
-            await SendPdfAsync(offer, ct);
+            _logger.LogError(ex, "Fallo al enviar el resumen de la página {Site}", siteName);
         }
     }
+}
 
     private async Task SendPdfAsync(JobOffer offer, CancellationToken ct)
     {
