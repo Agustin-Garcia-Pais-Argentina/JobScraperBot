@@ -48,7 +48,7 @@ El bot es 100% agnóstico y se configura editando un único archivo. Puedes defi
 
 1. **Cloná el repositorio:**
 ```bash
-git clone https://github.com/tu-usuario/JobScraperBot.git
+git clone https://github.com/Agustin-Garcia-Pais-Argentina/JobScraperBot.git
 cd JobScraperBot
 
 ```
