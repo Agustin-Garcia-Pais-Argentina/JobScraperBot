@@ -2,3 +2,4 @@ bin/
 obj/
 *.user
 .vs/
+data/seen-offers.json

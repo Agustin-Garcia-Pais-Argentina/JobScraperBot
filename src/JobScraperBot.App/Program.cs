@@ -41,12 +41,12 @@ services.AddSingleton<IJobScraper, GetOnBoardScraper>();
 
 //services.AddHttpClient<ExampleHtmlScraper>();
 //services.AddSingleton<IJobScraper, ExampleHtmlScraper>(); // TODO: descomentar al configurar un sitio real
-// Próximos: GetOnBoardScraper (API), WeWorkRemotelyScraper (RSS)
 
 // --- Filtros del pipeline ---
 services.AddSingleton<IJobFilter, SeniorityExcludeFilter>();
 services.AddSingleton<IJobFilter, LocationFilter>();
 services.AddSingleton<IJobFilter, RoleFilter>();
+services.AddSingleton<IJobFilter, CompanyExcludeFilter>();
 services.AddSingleton<FilterPipeline>();
 
 using var provider = services.BuildServiceProvider();

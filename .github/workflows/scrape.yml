@@ -1,10 +1,15 @@
 name: Scrape Job Offers
 
-on:
+on: #triggers de workflow
   schedule:
     - cron: "0 13 * * *"  # 10:00 ART (UTC-3) -> 13:00 UTC
     - cron: "0 21 * * *"  # 18:00 ART (UTC-3) -> 21:00 UTC
   workflow_dispatch: {}   # permite correrlo manualmente para testear
+
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 permissions:
   contents: write   # necesario para commitear el estado (data/seen-offers.json)

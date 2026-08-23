@@ -1,4 +1,5 @@
 {
+  "ExcludedCompanies": ["AI Supermarket", "Bjak", "Turing"],
   "seniorityExcludeTerms": ["senior", "ssr", "semi senior", "semi-senior","sr","staff","principal","manager", "sr.", "lead"],
   "location": {
     "acceptedOnsiteCities": [
