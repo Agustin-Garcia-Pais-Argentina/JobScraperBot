@@ -46,7 +46,7 @@ services.AddSingleton<IJobScraper, GetOnBoardScraper>();
 services.AddSingleton<IJobFilter, SeniorityExcludeFilter>();
 services.AddSingleton<IJobFilter, LocationFilter>();
 services.AddSingleton<IJobFilter, RoleFilter>();
-services.AddSingleton<IJobFilter, SeniorityExcludeFilter>();
+services.AddSingleton<IJobFilter, CompanyExcludeFilter>();
 services.AddSingleton<FilterPipeline>();
 
 using var provider = services.BuildServiceProvider();
