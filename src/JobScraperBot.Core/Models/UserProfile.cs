@@ -15,6 +15,8 @@ public class UserProfile
     public List<RoleProfile> RoleProfiles { get; set; } = new();
 
     public LocationProfile Location { get; set; } = new();
+
+    public List<string> ExcludedCompanies { get; init; } = new();
 }
 
 public class RoleProfile
