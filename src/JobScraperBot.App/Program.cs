@@ -39,14 +39,12 @@ services.AddSingleton<IJobScraper, WeRemotoScraper>();
 services.AddHttpClient<IJobScraper, GetOnBoardScraper>();
 services.AddSingleton<IJobScraper, GetOnBoardScraper>();
 
-//services.AddHttpClient<ExampleHtmlScraper>();
-//services.AddSingleton<IJobScraper, ExampleHtmlScraper>(); // TODO: descomentar al configurar un sitio real
 
 // --- Filtros del pipeline ---
-services.AddSingleton<IJobFilter, SeniorityExcludeFilter>();
-services.AddSingleton<IJobFilter, LocationFilter>();
-services.AddSingleton<IJobFilter, RoleFilter>();
 services.AddSingleton<IJobFilter, CompanyExcludeFilter>();
+services.AddSingleton<IJobFilter, RoleFilter>();
+services.AddSingleton<IJobFilter, LocationFilter>();
+services.AddSingleton<IJobFilter, SeniorityExcludeFilter>();
 services.AddSingleton<FilterPipeline>();
 
 using var provider = services.BuildServiceProvider();
