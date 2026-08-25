@@ -11,6 +11,14 @@ on: #triggers de workflow
   pull_request:
     branches: [ "main" ]
 
+# Evita que dos corridas lean/escriban data/seen-offers.json al mismo tiempo
+# (ej: un push llega justo cuando el cron ya está corriendo). No cancelamos
+# la que está en curso (cancel-in-progress: false) para no interrumpir una
+# escritura de estado a medio hacer -- la nueva simplemente espera su turno.
+concurrency:
+  group: scrape-job-offers
+  cancel-in-progress: false
+
 permissions:
   contents: write   # necesario para commitear el estado (data/seen-offers.json)
 
@@ -33,13 +41,20 @@ jobs:
       - name: Run tests
         run: dotnet test JobScraperBot.sln --configuration Release --no-build
 
+      # Correr el bot de verdad (scrapear + notificar por Telegram + commitear
+      # estado) SOLO tiene sentido en el cron o al dispararlo a mano. En un
+      # push/PR alcanza con validar que compila y los tests pasan -- si no,
+      # cada commit te manda un mensaje de Telegram y pisa data/seen-offers.json
+      # sin que corresponda.
       - name: Run bot
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: dotnet run --project src/JobScraperBot.App --configuration Release --no-build
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
       - name: Persistir estado (ofertas vistas)
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update seen offers [skip ci]"
