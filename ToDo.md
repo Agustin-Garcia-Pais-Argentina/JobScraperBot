@@ -19,7 +19,7 @@ El coeficiente sirve para ordenar el trabajo, no para afirmar que una tarea con 
 |---|---|---:|---:|---:|---:|
 | 1 | Evitar ejecuciones simultáneas en GitHub Actions | 5 | 5 | **5.0** | x |
 | 2 | Crear tests para WeRemoto, Gtb y RemoteOk | 5 | 4 | **4.6** | x |
-| 3 | IDs deterministas en lugar de GUID aleatorio | 5 | 4 | **4.6** | |
+| 3 | IDs deterministas en lugar de GUID aleatorio | 5 | 4 | **4.6** | x |
 | 4 | Errores y reintentos más específicos | 5 | 3 | **4.2** | |
 | 5 | Escritura atómica de `seen-offers.json` | 4 | 4 | **4.0** | |
 | 6 | Mejorar detección de ubicaciones remotas | 3 | 5 | **3.8** | |
