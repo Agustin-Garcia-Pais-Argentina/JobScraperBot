@@ -15,7 +15,7 @@ El coeficiente sirve para ordenar el trabajo, no para afirmar que una tarea con 
 
 ## Tabla de prioridades
 
-| Prioridad | Mejora | Mejora | Factibilidad | Coeficiente | Implenmentado|
+| Prioridad | Mejora | Mejora | Factibilidad | Coeficiente | Implementado|
 |---|---|---:|---:|---:|---:|
 | 1 | Evitar ejecuciones simultáneas en GitHub Actions | 5 | 5 | **5.0** | x |
 | 2 | Crear tests para WeRemoto, Gtb y RemoteOk | 5 | 4 | **4.6** | x |
