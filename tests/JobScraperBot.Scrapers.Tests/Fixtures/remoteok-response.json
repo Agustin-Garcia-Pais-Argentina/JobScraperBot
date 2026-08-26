@@ -1,0 +1,21 @@
+[
+  {"legal": "Fetching this API without setting a proper User-Agent header is a violation of the DMCA"},
+  {
+    "id": "12345",
+    "url": "https://remoteok.com/remote-jobs/12345-backend-developer-acme",
+    "position": "Backend Developer",
+    "company": "Acme Corp",
+    "location": "Worldwide",
+    "date": "2026-08-01T00:00:00+00:00",
+    "description": "We are looking for a backend developer with Python experience."
+  },
+  {
+    "id": "12346",
+    "url": "https://remoteok.com/remote-jobs/12346-senior-java-engineer-beta",
+    "position": "Senior Java Engineer",
+    "company": "Beta Inc",
+    "location": "",
+    "date": "2026-08-02T00:00:00+00:00",
+    "description": "5+ years of Java experience required."
+  }
+]

@@ -17,7 +17,7 @@ El coeficiente sirve para ordenar el trabajo, no para afirmar que una tarea con 
 
 | Prioridad | Mejora | Mejora | Factibilidad | Coeficiente |
 |---|---|---:|---:|---:|
-| 1 | Evitar ejecuciones simultáneas en GitHub Actions | 5 | 5 | **5.0** |
+| 1 | Evitar ejecuciones simultáneas en GitHub Actions | 5 | 5 | **5.0** | IMPLEMENTED
 | 2 | Crear tests para WeRemoto, Gtb y RemoteOk | 5 | 4 | **4.6** |
 | 3 | IDs deterministas en lugar de GUID aleatorio | 5 | 4 | **4.6** |
 | 4 | Errores y reintentos más específicos | 5 | 3 | **4.2** |
@@ -68,7 +68,7 @@ El coeficiente sirve para ordenar el trabajo, no para afirmar que una tarea con 
 - Impacto: puede cambiar la duración y el resultado de una corrida fallida, pero no el modelo de dominio.
 - Alcance: resiliencia y scrapers; requiere tests de errores HTTP.
 
-### 4. Evitar ejecuciones simultáneas en GitHub Actions
+### 4. Evitar ejecuciones simultáneas en GitHub Actions  IMPLEMENTED
 
 - Objetivo: impedir que dos corridas lean y escriban `data/seen-offers.json` al mismo tiempo.
 - Cómo hacerlo:

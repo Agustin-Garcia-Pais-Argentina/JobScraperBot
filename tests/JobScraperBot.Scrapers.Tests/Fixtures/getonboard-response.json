@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "id": "98765",
+      "attributes": {
+        "title": "Backend Developer Jr",
+        "description": "Buscamos backend developer junior con Python o Java",
+        "remote": true,
+        "published_at": 1754000000,
+        "company": {
+          "data": {
+            "attributes": { "name": "Acme LATAM" }
+          }
+        }
+      },
+      "links": {
+        "public_url": "https://www.getonbrd.com/jobs/backend-developer-jr-acme-latam"
+      }
+    },
+    {
+      "id": "98766",
+      "attributes": {
+        "title": "Senior Data Engineer",
+        "description": "5+ años de experiencia en pipelines de datos",
+        "remote": false,
+        "published_at": 1754100000,
+        "company": {
+          "data": {
+            "attributes": { "name": "Beta Data" }
+          }
+        }
+      },
+      "links": null
+    }
+  ]
+}
