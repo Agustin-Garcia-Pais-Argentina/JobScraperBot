@@ -2,6 +2,7 @@ using AngleSharp;
 using AngleSharp.Dom;
 using JobScraperBot.Core.Models;
 using Microsoft.Extensions.Logging;
+using JobScraperBot.Scrapers.Helpers;
 
 namespace JobScraperBot.Scrapers;
 
@@ -49,7 +50,7 @@ public static class HtmlOfferMapper
             var company = card.QuerySelector(".job-company")?.TextContent.Trim() ?? "";
             var location = card.QuerySelector(".job-location")?.TextContent.Trim() ?? "";
             var url = card.QuerySelector("a")?.GetAttribute("href") ?? "";
-            var externalId = url.Split('/').LastOrDefault() ?? Guid.NewGuid().ToString();
+            var externalId = ExternalIdGenerator.Generate(siteName, null, url, title, company, location);
             var isRemote = location.Contains("remoto", StringComparison.OrdinalIgnoreCase);
             var description = card.QuerySelector(".job-description")?.TextContent.Trim() ?? "";
 

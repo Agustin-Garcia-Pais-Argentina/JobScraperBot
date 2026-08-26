@@ -2,6 +2,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using JobScraperBot.Core.Models;
 using Microsoft.Extensions.Logging;
+using JobScraperBot.Scrapers.Helpers;
 
 namespace JobScraperBot.Scrapers;
 
@@ -44,7 +45,7 @@ public static class GetOnBoardMapper
 
         return new JobOffer(
             SourceSite: SiteName,
-            ExternalId: job.Id ?? Guid.NewGuid().ToString(),
+            ExternalId: ExternalIdGenerator.Generate(SiteName, job.Id, jobUrl, attributes?.Title, companyName, attributes?.Remote == true ? "Remote" : "On-site"),
             Title: attributes?.Title ?? "Sin título",
             Company: companyName,
             Location: attributes?.Remote == true ? "Remote" : "On-site",

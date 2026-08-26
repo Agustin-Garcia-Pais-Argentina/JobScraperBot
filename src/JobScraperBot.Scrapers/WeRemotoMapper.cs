@@ -1,6 +1,7 @@
 using HtmlAgilityPack;
 using JobScraperBot.Core.Models;
 using Microsoft.Extensions.Logging;
+using JobScraperBot.Scrapers.Helpers;
 
 namespace JobScraperBot.Scrapers;
 
@@ -42,12 +43,13 @@ public static class WeRemotoMapper
 
         var href = linkNode.GetAttributeValue("href", "");
         var fullUrl = href.StartsWith("http") ? href : $"https://www.weremoto.com{href}";
-        var externalId = href.Split('/').LastOrDefault() ?? Guid.NewGuid().ToString();
+        var slug = href.Split('/').LastOrDefault() ?? "";
 
         // Si no hay h2/h3, usamos el slug de la URL como título (mejor que nada).
         var titleNode = article.SelectSingleNode(".//h2") ?? article.SelectSingleNode(".//h3");
-        var title = titleNode?.InnerText?.Trim()
-                    ?? externalId.Replace("-", " ").Replace("id ", "").ToUpper();
+        var title = titleNode?.InnerText?.Trim() ?? slug.Replace("-", " ").Replace("id ", "").ToUpper();
+
+        var externalId = ExternalIdGenerator.Generate(SiteName, null, fullUrl, title, "WeRemoto", "Remote (LATAM)");
 
         return new JobOffer(
             SourceSite: SiteName,
