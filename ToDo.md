@@ -15,19 +15,19 @@ El coeficiente sirve para ordenar el trabajo, no para afirmar que una tarea con 
 
 ## Tabla de prioridades
 
-| Prioridad | Mejora | Mejora | Factibilidad | Coeficiente |
-|---|---|---:|---:|---:|
-| 1 | Evitar ejecuciones simultáneas en GitHub Actions | 5 | 5 | **5.0** | IMPLEMENTED
-| 2 | Crear tests para WeRemoto, Gtb y RemoteOk | 5 | 4 | **4.6** |
-| 3 | IDs deterministas en lugar de GUID aleatorio | 5 | 4 | **4.6** |
-| 4 | Errores y reintentos más específicos | 5 | 3 | **4.2** |
-| 5 | Escritura atómica de `seen-offers.json` | 4 | 4 | **4.0** |
-| 6 | Mejorar detección de ubicaciones remotas | 3 | 5 | **3.8** |
-| 7 | Revisar estados `Active`, `Closed` y `Gone` | 5 | 2 | **3.8** |
-| 8 | Unificar AngleSharp/HtmlAgilityPack | 3 | 3 | **3.0** |
-| 9 | Migrar a `Host.CreateApplicationBuilder` e `IOptions` | 3 | 3 | **3.0** |
-| 10 | Seniority basado también en tags | 3 | 3 | **3.0** |
-| 11 | Reemplazar la estrategia de WeRemoto | 3 | 2 | **2.6** |
+| Prioridad | Mejora | Mejora | Factibilidad | Coeficiente | Implenmentado|
+|---|---|---:|---:|---:|---:|
+| 1 | Evitar ejecuciones simultáneas en GitHub Actions | 5 | 5 | **5.0** | x |
+| 2 | Crear tests para WeRemoto, Gtb y RemoteOk | 5 | 4 | **4.6** | x |
+| 3 | IDs deterministas en lugar de GUID aleatorio | 5 | 4 | **4.6** | |
+| 4 | Errores y reintentos más específicos | 5 | 3 | **4.2** | |
+| 5 | Escritura atómica de `seen-offers.json` | 4 | 4 | **4.0** | |
+| 6 | Mejorar detección de ubicaciones remotas | 3 | 5 | **3.8** | |
+| 7 | Revisar estados `Active`, `Closed` y `Gone` | 5 | 2 | **3.8** | |
+| 8 | Unificar AngleSharp/HtmlAgilityPack | 3 | 3 | **3.0** | |
+| 9 | Migrar a `Host.CreateApplicationBuilder` e `IOptions` | 3 | 3 | **3.0** | |
+| 10 | Seniority basado también en tags | 3 | 3 | **3.0** | |
+| 11 | Reemplazar la estrategia de WeRemoto | 3 | 2 | **2.6** | |
 
 ## Fase 1: calidad visible y bajo riesgo
 
