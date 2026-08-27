@@ -3,7 +3,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "arquitecto-a-empresarial-y-datos-lisit-santiago",
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
@@ -11,7 +11,7 @@
     "ExternalId": "asterisk-freepbx-engineer-lead4u-remote",
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
     "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
-    "Status": 0
+    "Status": 2
   },
   {
     "SourceSite": "GetOnBoard",
@@ -24,7 +24,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "backend-developer-golang-2brains-santiago",
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
@@ -45,7 +45,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "desarrollador-a-backend-zerviz-technologies-remote",
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
@@ -59,7 +59,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "desarrollador-backend-go-5-meses-agilistik-santiago",
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
@@ -67,13 +67,13 @@
     "ExternalId": "desarrollador-backend-lisit-remote",
     "FirstSeenAt": "2026-08-24T17:17:19.7492326Z",
     "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
-    "Status": 0
+    "Status": 2
   },
   {
     "SourceSite": "GetOnBoard",
     "ExternalId": "desarrollador-full-stack-python-react-alluxi-remote-8b7d",
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
@@ -87,7 +87,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "desarrollador-web-weyland-ingenieria-limitada-santiago",
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
@@ -109,20 +109,20 @@
     "ExternalId": "full-stack-developer-angular-nestjs-sector-salud-apside-santiago",
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
     "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
-    "Status": 0
+    "Status": 2
   },
   {
     "SourceSite": "GetOnBoard",
     "ExternalId": "full-stack-developer-aws-bc-tecnologia-remote",
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
     "SourceSite": "GetOnBoard",
     "ExternalId": "full-stack-developer-codeable-lima",
     "FirstSeenAt": "2026-08-27T00:18:45.8193586Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
@@ -130,20 +130,20 @@
     "ExternalId": "full-stack-developer-junior-lexia-lexia-ciudad-de-mexico",
     "FirstSeenAt": "2026-08-26T13:44:22.1728644Z",
     "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
-    "Status": 0
+    "Status": 2
   },
   {
     "SourceSite": "GetOnBoard",
     "ExternalId": "full-stack-developer-laboratorio-laboral-spa-santiago",
     "FirstSeenAt": "2026-08-24T17:17:19.7492326Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
     "SourceSite": "GetOnBoard",
     "ExternalId": "full-stack-developer-python-nodejs-bc-tecnologia-santiago",
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
@@ -151,7 +151,7 @@
     "ExternalId": "full-stack-engineer-dynamic-devs-santiago-ace2",
     "FirstSeenAt": "2026-08-26T13:44:22.1728644Z",
     "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
-    "Status": 0
+    "Status": 2
   },
   {
     "SourceSite": "GetOnBoard",
@@ -162,9 +162,16 @@
   },
   {
     "SourceSite": "GetOnBoard",
+    "ExternalId": "full-stack-product-engineer-react-next-js-ai-infrastructu-crost-ai-remote",
+    "FirstSeenAt": "2026-08-27T22:41:06.114151Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
+    "Status": 0
+  },
+  {
+    "SourceSite": "GetOnBoard",
     "ExternalId": "full-stack-web-developer-kutoku-ltd-remote",
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
@@ -178,7 +185,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "fullstack-developer-java-angular-improving-remote",
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
@@ -199,14 +206,21 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "ingeniero-a-de-software-5-meses-agilistik-santiago",
     "FirstSeenAt": "2026-08-27T00:18:45.8193586Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
+    "Status": 0
+  },
+  {
+    "SourceSite": "GetOnBoard",
+    "ExternalId": "ingeniero-a-de-software-c-c-atentus-cordoba-buenos-aires-mendoza-santiago",
+    "FirstSeenAt": "2026-08-27T22:41:06.114151Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
     "SourceSite": "GetOnBoard",
     "ExternalId": "ingeniero-a-productos-digitales-agrosuper-rancagua",
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
@@ -215,6 +229,13 @@
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
     "LastSeenAt": "2026-08-23T21:10:18.5683771Z",
     "Status": 2
+  },
+  {
+    "SourceSite": "GetOnBoard",
+    "ExternalId": "java-developer-crest-it-resources-llc-remote-cc6b",
+    "FirstSeenAt": "2026-08-27T22:41:06.114151Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
+    "Status": 0
   },
   {
     "SourceSite": "GetOnBoard",
@@ -227,7 +248,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "senior-full-stack-developer-mineria-react-nextjs-nest-2brains-remote",
     "FirstSeenAt": "2026-08-26T13:44:22.1728644Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
@@ -241,28 +262,28 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "vision-artificial-ia-implementacion-y-fine-tuning-de-rede-osesa-santiago",
     "FirstSeenAt": "2026-08-27T00:18:45.8193586Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8252579Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1199023Z",
     "Status": 0
   },
   {
     "SourceSite": "RemoteOK",
     "ExternalId": "1137062",
     "FirstSeenAt": "2026-08-23T02:57:37.973039Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8134611Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1084795Z",
     "Status": 0
   },
   {
     "SourceSite": "UTN Santa Fe - Pasant\u00EDas",
     "ExternalId": "CN K 20_08_VAL",
     "FirstSeenAt": "2026-08-23T02:57:37.870799Z",
-    "LastSeenAt": "2026-08-27T00:18:45.6395759Z",
+    "LastSeenAt": "2026-08-27T22:41:05.9332521Z",
     "Status": 0
   },
   {
     "SourceSite": "WeRemoto",
     "ExternalId": "id-full-stack-product-engineer-latam-remote-us-hours-carbon-technology",
     "FirstSeenAt": "2026-08-23T02:57:38.0719457Z",
-    "LastSeenAt": "2026-08-27T00:18:45.8135778Z",
+    "LastSeenAt": "2026-08-27T22:41:06.1086354Z",
     "Status": 0
   }
 ]
