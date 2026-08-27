@@ -24,58 +24,59 @@ public static class ExternalIdGenerator
         string? location)
     {
         if (!string.IsNullOrWhiteSpace(officialId))
-            return officialId!;
+            return officialId;
 
         if (!string.IsNullOrWhiteSpace(url))
         {
-            try
-            {
-                var normalized = NormalizeUrl(url!);
-                // Si la url termina en un segmento no vacío, usar ese slug (por legibilidad).
-                var last = new Uri(normalized).Segments.LastOrDefault()?.Trim('/');
-                if (!string.IsNullOrWhiteSpace(last))
-                    return last!;
+            var normalized = NormalizeUrl(url);
 
-                // Si no hay segmento útil, usar el hash de la URL para mantener estabilidad.
-                return HashString(normalized);
-            }
-            catch
+            if (Uri.TryCreate(normalized, UriKind.Absolute, out var uri))
             {
-                // Si la normalización falla por alguna razón, caemos al hash compuesto.
+                var last = uri.Segments.LastOrDefault()?.Trim('/');
+                if (!string.IsNullOrWhiteSpace(last))
+                    return last;
             }
+
+            return HashString(normalized);
         }
 
-        // Fallback: hash estable de los campos más confiables disponibles
-        var composite = string.Join("|", new[] { site ?? "", title ?? "", company ?? "", location ?? "" });
-        return HashString(composite);
+        var composite = string.Join("|",
+            site?.Trim() ?? "",
+            title?.Trim() ?? "",
+            company?.Trim() ?? "",
+            location?.Trim() ?? "");
+
+        return HashString(composite.ToLowerInvariant());
     }
 
     private static string NormalizeUrl(string url)
     {
-        // Asegurar esquema y quitar query/fragment, y terminar sin slash
-        if (!url.StartsWith("http://", StringComparison.OrdinalIgnoreCase) &&
-            !url.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+        var value = url.Trim();
+
+        if (!value.StartsWith("http://", StringComparison.OrdinalIgnoreCase) &&
+            !value.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
         {
-            // asumir https si falta
-            url = "https://" + url;
+            value = "https://" + value;
         }
 
-        var uri = new Uri(url);
-        var builder = new UriBuilder(uri)
+        if (Uri.TryCreate(value, UriKind.Absolute, out var uri))
         {
-            Query = string.Empty,
-            Fragment = string.Empty
-        };
-        var result = builder.Uri.GetLeftPart(UriPartial.Path).TrimEnd('/');
-        return result;
+            var builder = new UriBuilder(uri)
+            {
+                Query = string.Empty,
+                Fragment = string.Empty
+            };
+
+            return builder.Uri.GetLeftPart(UriPartial.Path).TrimEnd('/');
+        }
+
+        return value;
     }
 
     private static string HashString(string input)
     {
-        using var sha256 = SHA256.Create();
         var bytes = Encoding.UTF8.GetBytes(input);
-        var hash = sha256.ComputeHash(bytes);
-        // hex short: tomar 12 bytes (24 hex chars) para mantenerlo legible y suficientemente único
-        return string.Concat(hash.Take(12).Select(b => b.ToString("x2")));
+        var hash = SHA256.HashData(bytes);
+        return Convert.ToHexString(hash.AsSpan(0, 12)).ToLowerInvariant();
     }
 }
