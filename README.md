@@ -28,17 +28,17 @@ La solución está organizada por capas:
 - `JobScraperBot.Infrastructure`: almacenamiento local, notificaciones y resiliencia.
 - `JobScraperBot.Orchestration`: orquestación, concurrencia y ejecución del ciclo completo.
 
-## Engineering highlights
+## Aspectos Ingenieriles
 
-### Idempotency & data integrity
+### Idempotencia & Integridad de datos
 
 Se utilizan IDs deterministas para evitar duplicados y mantener consistencia en la deduplicación. La misma oferta siempre intenta producir el mismo `ExternalId`, incluso si el sitio o la respuesta cambian levemente.
 
-### Resilience & fault tolerance
+### Resiliencia & Tolerancia al fallo
 
 La infraestructura de scraping distingue errores transitorios de permanentes. Para HTTP `429` y `5xx` se hace retry con backoff exponencial y respetando `Retry-After` cuando lo informa la API; para `404`, JSON inválido y selectores rotos no se reintenta.
 
-### Clean architecture
+### Arquitectura limpia
 
 El proyecto usa interfaces como `IJobScraper` y un pipeline de filtros para desacoplar nuevos sitios y reglas de negocio. La lógica de cada fuente vive en su scraper y el core no conoce detalles de HTML o JSON.
 
@@ -51,7 +51,7 @@ El proyecto usa interfaces como `IJobScraper` y un pipeline de filtros para desa
 - Telegram.Bot para notificaciones
 - GitHub Actions para ejecución automatizada
 
-## Getting started
+## Como utilizar
 
 1. Clonar el repositorio:
 
