@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\JobScraperBot.Scrapers\JobScraperBot.Scrapers.csproj" />
+    <ProjectReference Include="..\..\src\JobScraperBot.Infrastructure\JobScraperBot.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Fixtures\**" CopyToOutputDirectory="PreserveNewest" />
