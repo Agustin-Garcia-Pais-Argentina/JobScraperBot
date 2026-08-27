@@ -68,18 +68,24 @@ public class ScrapeOrchestrator
 
     private async Task<ScrapeResult> SafeScrapeAsync(IJobScraper scraper, CancellationToken ct)
     {
-        var retryPolicy = ResiliencePolicies.CreateScraperRetryPolicy(
-            (ex, attempt) => _logger.LogWarning(
-                "[{Site}] Reintento {Attempt} tras error: {Message}", scraper.SiteName, attempt, ex.Message));
-
         try
         {
-            var offers = await retryPolicy.ExecuteAsync(() => scraper.ScrapeAsync(ct));
+            var offers = await ResiliencePolicies.ExecuteWithRetryAsync(
+                () => scraper.ScrapeAsync(ct),
+                (ex, attempt, delay) => _logger.LogWarning(
+                    "[{Scraper}] Reintento {Attempt} tras error {ErrorType}: {ErrorMessage}. Delay={DelayMs}ms",
+                    scraper.SiteName,
+                    attempt,
+                    ex.GetType().Name,
+                    ex.Message,
+                    (int)delay.TotalMilliseconds),
+                ct);
+
             return new ScrapeResult(scraper.SiteName, true, offers);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "[{Site}] Scraping falló definitivamente tras reintentos", scraper.SiteName);
+            _logger.LogError(ex, "[{Scraper}] Scraping falló definitivamente tras reintentos", scraper.SiteName);
             return new ScrapeResult(scraper.SiteName, false, Array.Empty<JobOffer>(), ex.Message);
         }
     }
