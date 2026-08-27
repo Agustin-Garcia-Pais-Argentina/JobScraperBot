@@ -1,5 +1,7 @@
+using System.Net;
 using JobScraperBot.Core.Interfaces;
 using JobScraperBot.Core.Models;
+using JobScraperBot.Infrastructure.Resilience;
 using Microsoft.Extensions.Logging;
 
 namespace JobScraperBot.Scrapers;
@@ -25,7 +27,28 @@ public class RemoteOkScraper : IJobScraper
             _http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "JobScraperBot/1.0");
         }
 
-        var json = await _http.GetStringAsync("https://remoteok.com/api?tag=dev", ct);
+        using var request = new HttpRequestMessage(HttpMethod.Get, "https://remoteok.com/api?tag=dev");
+        using var response = await _http.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, ct);
+
+        if (response.StatusCode == HttpStatusCode.TooManyRequests)
+        {
+            var retryAfter = ResiliencePolicies.ParseRetryAfter(response.Headers);
+            throw new RetryableScrapeException(
+                $"[{SiteName}] rate limited by RemoteOK",
+                response.StatusCode,
+                retryAfter ?? TimeSpan.FromSeconds(2));
+        }
+
+        if ((int)response.StatusCode >= 500)
+            throw new RetryableScrapeException($"[{SiteName}] servidor respondió {response.StatusCode}", response.StatusCode);
+
+        if (response.StatusCode == HttpStatusCode.NotFound)
+            throw new PermanentScrapeException($"[{SiteName}] no se encontró la API", response.StatusCode);
+
+        if (!response.IsSuccessStatusCode)
+            throw new PermanentScrapeException($"[{SiteName}] respuesta HTTP {(int)response.StatusCode}", response.StatusCode);
+
+        var json = await response.Content.ReadAsStringAsync(ct);
         return RemoteOkMapper.MapJson(json, _logger);
     }
 }
