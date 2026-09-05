@@ -73,7 +73,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "desarrollador-a-full-stack-php-symfony-popestate-santiago",
     "FirstSeenAt": "2026-09-03T22:52:27.7074091Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
@@ -87,7 +87,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "desarrollador-backend-java-fieldbeat-santiago",
     "FirstSeenAt": "2026-08-28T22:46:34.4753801Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
@@ -108,7 +108,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "desarrollador-fullstack-django-next-js-expressdent-santiago",
     "FirstSeenAt": "2026-09-04T22:36:00.8504827Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
@@ -122,7 +122,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "desarrollador-salesforce-semi-senior-apex-lwc-3it-remote",
     "FirstSeenAt": "2026-09-02T22:53:23.190757Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
@@ -164,7 +164,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "full-stack-developer-codeable-lima",
     "FirstSeenAt": "2026-08-27T00:18:45.8193586Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
@@ -178,7 +178,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "full-stack-developer-laboratorio-laboral-spa-santiago",
     "FirstSeenAt": "2026-08-24T17:17:19.7492326Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
@@ -186,7 +186,7 @@
     "ExternalId": "full-stack-developer-niuro-remote-0f51",
     "FirstSeenAt": "2026-09-04T22:36:00.8504827Z",
     "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
-    "Status": 0
+    "Status": 2
   },
   {
     "SourceSite": "GetOnBoard",
@@ -206,7 +206,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "full-stack-engineer-dynamic-devs-santiago-6020",
     "FirstSeenAt": "2026-09-01T17:03:10.2291954Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
@@ -220,7 +220,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "full-stack-engineer-node-js-react-ai-niuro-remote",
     "FirstSeenAt": "2026-09-04T22:36:00.8504827Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
@@ -234,7 +234,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "full-stack-product-engineer-react-next-js-ai-infrastructu-crost-ai-remote",
     "FirstSeenAt": "2026-08-27T22:41:06.114151Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
@@ -243,6 +243,13 @@
     "FirstSeenAt": "2026-08-23T02:57:38.0803815Z",
     "LastSeenAt": "2026-09-01T22:53:03.9843076Z",
     "Status": 2
+  },
+  {
+    "SourceSite": "GetOnBoard",
+    "ExternalId": "fullstack-c-net-react-freelance-4-meses-remoto-continuum-remote",
+    "FirstSeenAt": "2026-09-05T15:41:43.436087Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
+    "Status": 0
   },
   {
     "SourceSite": "GetOnBoard",
@@ -255,7 +262,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "fullstack-developer-angular-java-2brains-santiago",
     "FirstSeenAt": "2026-09-03T22:52:27.7074091Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
@@ -290,7 +297,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "ingeniero-a-de-software-c-c-atentus-cordoba-buenos-aires-mendoza-santiago",
     "FirstSeenAt": "2026-08-27T22:41:06.114151Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
@@ -304,7 +311,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "ingeniero-backend-java-y-node-js-agilistik-santiago",
     "FirstSeenAt": "2026-09-01T17:03:10.2291954Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
@@ -318,14 +325,14 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "java-developer-crest-it-resources-llc-remote-cc6b",
     "FirstSeenAt": "2026-08-27T22:41:06.114151Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
     "SourceSite": "GetOnBoard",
     "ExternalId": "lider-tecnico-direccion-chilecompra-santiago-5f86",
     "FirstSeenAt": "2026-09-03T22:52:27.7074091Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
@@ -346,7 +353,7 @@
     "SourceSite": "GetOnBoard",
     "ExternalId": "programador-fullstack-contabilidad-c-d-agromanagement-remote",
     "FirstSeenAt": "2026-09-01T17:03:10.2291954Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8580312Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
     "Status": 0
   },
   {
@@ -355,6 +362,13 @@
     "FirstSeenAt": "2026-08-26T13:44:22.1728644Z",
     "LastSeenAt": "2026-09-03T16:44:37.5702206Z",
     "Status": 2
+  },
+  {
+    "SourceSite": "GetOnBoard",
+    "ExternalId": "software-engineer-ii-dugu-remote",
+    "FirstSeenAt": "2026-09-05T15:41:43.436087Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4441684Z",
+    "Status": 0
   },
   {
     "SourceSite": "GetOnBoard",
@@ -374,21 +388,21 @@
     "SourceSite": "RemoteOK",
     "ExternalId": "1137062",
     "FirstSeenAt": "2026-08-23T02:57:37.973039Z",
-    "LastSeenAt": "2026-09-04T22:36:00.8430464Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4281094Z",
     "Status": 0
   },
   {
     "SourceSite": "UTN Santa Fe - Pasant\u00EDas",
     "ExternalId": "CN K 20_08_VAL",
     "FirstSeenAt": "2026-08-23T02:57:37.870799Z",
-    "LastSeenAt": "2026-09-04T22:36:00.6626556Z",
+    "LastSeenAt": "2026-09-05T15:41:43.2464162Z",
     "Status": 0
   },
   {
     "SourceSite": "WeRemoto",
     "ExternalId": "id-full-stack-product-engineer-latam-remote-us-hours-carbon-technology",
     "FirstSeenAt": "2026-08-23T02:57:38.0719457Z",
-    "LastSeenAt": "2026-09-04T22:36:00.843223Z",
+    "LastSeenAt": "2026-09-05T15:41:43.4282857Z",
     "Status": 0
   }
 ]
